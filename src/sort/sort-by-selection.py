@@ -1,3 +1,5 @@
+import time
+
 """ O(n^2)
     Slow sort
     Parameters:
@@ -38,9 +40,16 @@ def sort_by_selection(list, sort_type):
     
     return new_list
 
-test_list = [34, 23, 45, 12, 89, 67, 32, 145, 987, 876, 657, 1001, 2000, 1992, 1982]
+test_list = [6, 7, 1, 56, 878, 675, 987, 2500, 1600, 2800, 234, 456, 789, 675, 56]
+
+start = time.process_time()
 print(sort_by_selection(test_list[:], 0))
+print(f"{(time.process_time() - start)*1000:8f} ms")
+
+start = time.process_time()
 print(sort_by_selection(test_list[:], 1))
+print(f"{(time.process_time() - start)*1000:8f} ms")
+
 print(test_list)
 
 
