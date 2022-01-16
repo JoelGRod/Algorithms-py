@@ -3,40 +3,40 @@ import time
 """ O(n^2)
     Slow sort
     Parameters:
-        list
+        to_sort
         sort type: 
             0 ascendant 
             1 descendant
 """
 
-def find_minor(list):
-    minor = list[0]
+def find_minor(to_sort):
+    minor = to_sort[0]
     minor_idx = 0
 
-    for i in range(1, len(list)):
-        if list[i] < minor:
-            minor = list[i]
+    for i in range(1, len(to_sort)):
+        if to_sort[i] < minor:
+            minor = to_sort[i]
             minor_idx = i
      
     return minor_idx
 
-def find_higher(list):
-    higher = list[0]
+def find_higher(to_sort):
+    higher = to_sort[0]
     higher_idx = 0
 
-    for i in range(1, len(list)):
-        if list[i] > higher:
-            higher = list[i]
+    for i in range(1, len(to_sort)):
+        if to_sort[i] > higher:
+            higher = to_sort[i]
             higher_idx = i
      
     return higher_idx
 
-def sort_by_selection(list, sort_type):
+def sort_by_selection(to_sort, sort_type):
     new_list = []
 
-    for i in range(0, len(list)):
-        lower = find_minor(list) if sort_type == 0 else find_higher(list)
-        new_list.append(list.pop(lower))
+    for i in range(0, len(to_sort)):
+        lower = find_minor(to_sort) if sort_type == 0 else find_higher(to_sort)
+        new_list.append(to_sort.pop(lower))
     
     return new_list
 
