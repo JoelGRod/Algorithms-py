@@ -1,4 +1,4 @@
-from dijkstra import dijkstra
+from ...main.graph.dijkstra import dijkstra
 
 # Example One
 graph = {
