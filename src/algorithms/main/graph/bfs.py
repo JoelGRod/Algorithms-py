@@ -19,7 +19,7 @@ graph = {
     "Peggy": []
 }
 
-def breadth_first_search(name):
+def breadth_first_search(graph, name):
     queue = deque()
     queue += graph[name]
     visited = []
@@ -39,4 +39,4 @@ def breadth_first_search(name):
 def is_seller(name):
     return name[-1] == "m"
 
-print(breadth_first_search("Joe"))
+# print(breadth_first_search("Joe"))
