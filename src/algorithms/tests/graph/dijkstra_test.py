@@ -1,4 +1,4 @@
-from main.graph.dijkstra import dijkstra
+from algorithms.main.graph.dijkstra import dijkstra
 import unittest
 
 # Example One
