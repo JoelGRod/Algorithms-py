@@ -38,14 +38,14 @@ numbers = [1, 3, 4, 6, 7, 9, 12, 14, 16, 18, 20, 24, 28, 36, 45, 56]
 value = 56
 
 # Binary Search
-start = time.process_time()
-print("Normal: ", binary_search(numbers, value))
-print(f"{(time.process_time() - start)*1000:8f} ms")
+# start = time.process_time()
+# print("Normal: ", binary_search(numbers, value))
+# print(f"{(time.process_time() - start)*1000:8f} ms")
 
 # Binary Search Recursive
-start = time.process_time()
-print("Recursive: ", binary_search_recursive(numbers, value))
-print(f"{(time.process_time() - start)*1000:8f} ms")
+# start = time.process_time()
+# print("Recursive: ", binary_search_recursive(numbers, value))
+# print(f"{(time.process_time() - start)*1000:8f} ms")
 
 
 
