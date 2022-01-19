@@ -1,5 +1,5 @@
-from algorithms.main.graph.dijkstra import dijkstra
 import unittest
+from algorithms.main.graph.dijkstra import dijkstra
 
 # Example One
 graph = {
@@ -123,4 +123,6 @@ class TestDijkstra(unittest.TestCase):
         )
 		self.assertEqual(dijkstra(graph_three, costs_three, parents_three), expected)
 
-unittest.main()
+
+if __name__ == '__main__':
+    unittest.main()
