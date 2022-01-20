@@ -1,5 +1,5 @@
 import unittest
-from algorithms.main.graph.bfs import breadth_first_search as bfs
+from algorithms.main.graphs.bfs import breadth_first_search as bfs
 
 graph = {
     "Joe": ["Claire", "Bob", "Alice"],

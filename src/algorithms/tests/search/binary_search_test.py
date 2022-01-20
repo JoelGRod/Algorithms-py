@@ -1,5 +1,5 @@
 import unittest
-from algorithms.main.search.binary_search import binary_search_recursive as bsr, binary_search as bs
+from algorithms.main.searchs.binary_search import binary_search_recursive as bsr, binary_search as bs
 
 class TestBreadFirstSearch(unittest.TestCase):
     def setUp(self):

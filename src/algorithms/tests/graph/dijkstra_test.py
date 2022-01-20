@@ -1,5 +1,5 @@
 import unittest
-from algorithms.main.graph.dijkstra import dijkstra
+from algorithms.main.graphs.dijkstra import dijkstra
 
 # Example One
 graph = {
