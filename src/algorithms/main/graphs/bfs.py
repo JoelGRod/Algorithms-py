@@ -1,6 +1,6 @@
 from collections import deque
 
-""" Breadth First Search - BFS
+""" Breadth First Search - BFS - O(total_nodes + total_edges)
     a - Is there a path between node A and node B?
     b - Which is the shorter path between node A and node B?
     For:

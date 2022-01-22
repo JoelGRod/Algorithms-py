@@ -1,4 +1,4 @@
-""" Dijkstra
+""" Dijkstra - O(( V + E ) log V)
     a - Is there a path between node A and node B?
     b - Which is the faster (not shorter) path between node A and node B?
     For:
@@ -6,6 +6,7 @@
         Weighted graphs
         Non-cyclic graphs
         Non negative edges
+    Greedy - approximation / Brute force Algorithm
 """
 
 # All nodes are required
