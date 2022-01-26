@@ -22,3 +22,10 @@ def DNA_strand(dna):
     }
 
     return "".join(list(map(lambda letter: dna_comp[letter], dna)))
+
+#import string
+def DNA_strand_extra(dna):
+    # Python 2.7 solution
+    #return dna.translate(string.maketrans("ATCG","TAGC"))
+    # Python 3.4 solution || you don't need to import anything :)
+    return dna.translate(str.maketrans("ATCG","TAGC"))
