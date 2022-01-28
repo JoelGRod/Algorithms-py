@@ -21,5 +21,6 @@ def alphabet_position(text):
          if (ord(letter) - 96) >= 1
          and (ord(letter) - 96) <= 26])
 
+
 def alphabet_position_extra(text):
     return ' '.join(str(ord(c) - 96) for c in text.lower() if c.isalpha())
