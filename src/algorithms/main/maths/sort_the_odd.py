@@ -32,3 +32,11 @@ def sort_array_extra_two(source_array):
     return list(map(lambda number:
                     number if number % 2 == 0
                     else odds.pop(0), source_array))
+
+
+def sort_array_extra_three(source_array):
+    result = sorted([l for l in source_array if l % 2 == 1])
+    for index, item in enumerate(source_array):
+        if item % 2 == 0:
+            result.insert(index, item)
+    return result
