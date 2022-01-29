@@ -27,3 +27,7 @@ def order(sentence):
 
 def natural_keys(text):
     return [int(c) for c in re.split(r'(\d+)', text) if c.isdigit()]
+  
+
+def order_extra(sentence):
+    return " ".join(sorted(sentence.split(), key=lambda x: int(filter(str.isdigit, x))))
