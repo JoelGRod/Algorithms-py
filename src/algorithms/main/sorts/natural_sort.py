@@ -10,7 +10,7 @@ Examples
 import re
 
 
-def order(sentence):
+def natural_sort(sentence):
   # code here
     my_list = sentence.split(" ")
     my_list.sort(key=natural_keys)
