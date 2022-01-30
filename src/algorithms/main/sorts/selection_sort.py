@@ -1,12 +1,24 @@
 import time
 
-""" O(n^2)
-    Slow sort
-    Parameters:
-        to_sort
-        sort type: 
-            0 ascendant 
-            1 descendant
+""" 
+Selection sort 
+
+A sorting algorithm, specifically an in-place comparison sort. It has 
+O(n2) time complexity, making it inefficient on large lists, and 
+generally performs worse than the similar insertion sort. 
+Selection sort is noted for its simplicity, and it has performance 
+advantages over more complicated algorithms in certain situations, 
+particularly where auxiliary memory is limited.
+
+Best	Average	    Worst
+n^2	    n^2	        n^2
+
+Slow sort
+Parameters:
+    to_sort
+    sort type: 
+        0 ascendant 
+        1 descendant
 """
 
 def find_minor(to_sort):
