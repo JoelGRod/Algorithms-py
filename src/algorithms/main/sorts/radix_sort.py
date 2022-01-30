@@ -17,6 +17,7 @@ in a positional numeral system. For example, a binary system
 (using numbers 0 to 9) has a radix of 10.
 
 Efficiency
+
 The topic of the efficiency of radix sort compared to other sorting 
 algorithms is somewhat tricky and subject to quite a lot of 
 misunderstandings. Whether radix sort is equally efficient, 
