@@ -31,3 +31,65 @@ A* search (a graph traversal algorithm like BFS)
 Huffman codes (an encoding for data compression)
 """
 
+class PriorityStack:
+
+    def __init__(self):
+        self.top = None
+        self.items = {}
+        self.aux_stack = []
+    
+    def empty(self):
+        return self.top == None
+    
+    def peek(self):
+        return [self.top[0], self.top[1]]
+    
+    def pop(self):
+        print(self.top)
+        top = self.top
+        self.top = self.items[self.top[3]]
+
+        if self.top: self.top[2] = None  
+        else: self.top = None
+
+        self.remove(top[0])
+
+        return [top[0], top[1]]
+    
+    def remove(self, key):
+        self.items.pop(key)
+        self.aux_stack = [item for item in self.aux_stack if item[0] != key]
+    
+    def push(self, key, priority):
+        # check if exists and has a different priority
+        self.item_exists(key, priority)
+        # if new
+        item = [key, priority, None, None]
+        self.items[key] = item
+
+        self.heap_sort(item)
+
+        for idx, item in enumerate(self.aux_stack):
+            if not self.aux_stack[idx - 1]: 
+                self.items[self.aux_stack[idx][0]][2] = None
+            if len(self.aux_stack) > 1 and len(self.aux_stack) - 1 >= idx + 1: 
+                self.items[self.aux_stack[idx][0]][3] = self.aux_stack[idx + 1][0]
+            if self.aux_stack[idx - 1]:
+                self.items[self.aux_stack[idx][0]][2] = self.aux_stack[idx - 1][0]
+        
+        self.top = self.aux_stack[0]
+    
+    def item_exists(self, key, priority):
+        if key in self.items and self.items[key][1] != priority:
+            self.remove(key)
+    
+    def heap_sort(self, item):
+        contain = False
+        for idx, item in enumerate(self.aux_stack):
+            if self.aux_stack[idx][1] >= item[1]:
+                self.aux_stack.insert(idx, item)
+                contain = True
+                break
+        
+        if not contain: self.aux_stack.append(item)
+
