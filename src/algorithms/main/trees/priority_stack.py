@@ -47,6 +47,8 @@ class PriorityStack:
     def pop(self):
         print(self.top)
         top = self.top
+        # Error here
+        print(self.top[3])
         self.top = self.items[self.top[3]]
 
         if self.top: self.top[2] = None  
@@ -66,17 +68,17 @@ class PriorityStack:
         # if new
         item = [key, priority, None, None]
         self.items[key] = item
-
+        # Sort stack
         self.heap_sort(item)
-
+        # Update prev and next from items dict
         for idx, item in enumerate(self.aux_stack):
-            if not self.aux_stack[idx - 1]: 
-                self.items[self.aux_stack[idx][0]][2] = None
-            if len(self.aux_stack) > 1 and len(self.aux_stack) - 1 >= idx + 1: 
-                self.items[self.aux_stack[idx][0]][3] = self.aux_stack[idx + 1][0]
-            if self.aux_stack[idx - 1]:
-                self.items[self.aux_stack[idx][0]][2] = self.aux_stack[idx - 1][0]
-        
+            if idx == 0: 
+                self.items[item[0]][2] = None
+            if idx > 0: 
+                self.items[item[0]][2] = self.aux_stack[idx - 1][0]
+            if idx < len(self.aux_stack) - 1:
+                self.items[item[0]][3] = self.aux_stack[idx + 1][0]
+        # Update top if it has changed
         self.top = self.aux_stack[0]
     
     def item_exists(self, key, priority):
@@ -85,8 +87,8 @@ class PriorityStack:
     
     def heap_sort(self, item):
         contain = False
-        for idx, item in enumerate(self.aux_stack):
-            if self.aux_stack[idx][1] >= item[1]:
+        for idx, stack_item in enumerate(self.aux_stack):
+            if stack_item[1] >= item[1]:
                 self.aux_stack.insert(idx, item)
                 contain = True
                 break
