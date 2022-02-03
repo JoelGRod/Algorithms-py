@@ -45,18 +45,16 @@ class PriorityStack:
         return [self.top[0], self.top[1]]
     
     def pop(self):
-        print(self.top)
         top = self.top
-        # Error here
-        print(self.top[3])
-        self.top = self.items[self.top[3]]
-
-        if self.top: self.top[2] = None  
+        if self.top[3] is not None:
+            self.top = self.items[self.top[3]]
         else: self.top = None
+
+        if self.top: self.top[2] = None
 
         self.remove(top[0])
 
-        return [top[0], top[1]]
+        return [top[0],top[1]]
     
     def remove(self, key):
         self.items.pop(key)
