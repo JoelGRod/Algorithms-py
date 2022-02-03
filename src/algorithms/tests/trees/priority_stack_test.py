@@ -1,3 +1,4 @@
+import time
 import unittest
 from algorithms.main.trees.priority_stack import PriorityStack
 
@@ -5,6 +6,13 @@ from algorithms.main.trees.priority_stack import PriorityStack
 class TestPriorityStack(unittest.TestCase):
 
     pstack = PriorityStack()
+
+    def setUp(self):
+        self._started_at = time.time()
+
+    def tearDown(self):
+        elapsed = time.time() - self._started_at
+        print(f'Time: ({elapsed:.8f}s)')
 
     def test_priority_stack(self):
         # Arrange

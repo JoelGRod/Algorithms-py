@@ -48,7 +48,6 @@ class PriorityStack:
     def pop(self):
         next = self.peek()
         self.remove(next[0], next[1])
-        self.sort_priorities()
         return [next[0], next[1]]
 
     def remove(self, key, priority):
@@ -57,13 +56,14 @@ class PriorityStack:
             item for item in self.items[priority] if item[0] != key]
         if len(self.items[priority]) == 0:
             self.items.pop(priority)
+        self.sort_priorities()
 
     def push(self, key, priority):
         # check if exists and has a different priority
         self.item_exists(key, priority)
         # create new
         item = [key, priority]
-        # Stack (item at the beginning - LIFO)
+        # Stack (item at the beginning - LIFO - insert), for queue use append <--- THIS
         self.items[priority].insert(0, item)
         # Update ordered priorities if necessary
         self.sort_priorities()
@@ -77,9 +77,6 @@ class PriorityStack:
             self.register[key] = priority
 
     def sort_priorities(self):
-        # Error here
-        priorities = list(self.items.keys())
-        print(priorities)
-        print(type(self.ordered_priorities))
-        if len(self.ordered_priorities) < len(priorities):
-            self.ordered_priorities = priorities.sort()
+        if len(self.items.keys()) != len(self.ordered_priorities):
+            priorities = list(self.items.keys())
+            self.ordered_priorities = sorted(priorities)
