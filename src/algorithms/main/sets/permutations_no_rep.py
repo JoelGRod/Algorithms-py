@@ -1,5 +1,7 @@
-# Permutations no duplicates sol I
-
+""" 
+    Permutations without reps - no duplicates sol I
+    O(n!)
+"""
 
 def permutations(chars):
     if len(chars) == 1:
