@@ -1,13 +1,13 @@
 # Permutations no duplicates sol I
 
 
-def permutations_no_rep(chars):
+def permutations(chars):
     if len(chars) == 1:
         return chars
 
     permutation_opts = []
 
-    recursive_permutations = permutations_no_rep(chars[1:])
+    recursive_permutations = permutations(chars[1:])
 
     first_opt = chars[0]
 
@@ -23,16 +23,16 @@ def permutations_no_rep(chars):
 
 # Permutations no duplicates sol II - Slowest
 
-def permutations_no_rep_two(s):
+def permutations_two(s):
     if len(s) == 1:
         return s
     else:
-        return set(s[i]+p for i in range(len(s)) for p in permutations_no_rep_two(s[:i] + s[i+1:]))
+        return set(s[i]+p for i in range(len(s)) for p in permutations_two(s[:i] + s[i+1:]))
 
 
 # Permutations no duplicates sol III
 
 import itertools
 
-def permutations_no_rep_three(string):
+def permutations_three(string):
     return {''.join(x) for x in itertools.permutations(string)}
