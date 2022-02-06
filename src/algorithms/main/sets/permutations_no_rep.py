@@ -1,17 +1,19 @@
 """ 
     Permutations without reps - no duplicates sol I
     O(n!)
+    elements:
+        string || char list || int list
 """
 
-def permutations(chars):
-    if len(chars) == 1:
-        return chars
+def permutations(elements):
+    if len(elements) == 1:
+        return elements
 
     permutation_opts = []
 
-    recursive_permutations = permutations(chars[1:])
+    recursive_permutations = permutations(elements[1:])
 
-    first_opt = chars[0]
+    first_opt = elements[0]
 
     for idx in range(len(recursive_permutations)):
         recursive_permutation = recursive_permutations[idx]

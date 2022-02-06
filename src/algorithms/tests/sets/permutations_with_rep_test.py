@@ -13,6 +13,9 @@ class TestPermutationsWithReps(unittest.TestCase):
         print(f'Time: ({elapsed:.8f}s)')
 
     def test_permutations_with_rep(self):
+        # print(pwr('1234', 6))
+        # print(pwr([1,2,3,4], 2))
+        # print(pwr(["1","2","3","4"], 2))
         self.assertTrue(sorted(pwr('1234')))
         self.assertTrue(sorted(pwr([1, 2, 3, 4])))
         self.assertTrue(sorted(pwr(["1", "2", "3", "4"])))
