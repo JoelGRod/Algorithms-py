@@ -3,7 +3,7 @@ import unittest
 from algorithms.main.sets.permutations_no_rep import permutations as pnr, permutations_two as pnrtwo, permutations_three as pnrthree
 
 
-class TestPermutations(unittest.TestCase):
+class TestPermutationsWithoutReps(unittest.TestCase):
 
     def setUp(self):
         self._started_at = time.time()
