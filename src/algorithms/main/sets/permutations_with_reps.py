@@ -8,7 +8,7 @@
 """
 
 
-def permutations(elements, perm_len=None):
+def permute_with_reps(elements, perm_len=None):
     if not perm_len:
         perm_len = len(elements)
 
@@ -17,7 +17,7 @@ def permutations(elements, perm_len=None):
 
     permutations_opt = []
 
-    recursive_permutations = permutations(elements, perm_len - 1)
+    recursive_permutations = permute_with_reps(elements, perm_len - 1)
 
     for current in elements:
         for rec_permutation in recursive_permutations:

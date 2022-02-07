@@ -1,6 +1,6 @@
 import time
 import unittest
-from algorithms.main.sets.permutations_with_rep import permutations as pwr
+from algorithms.main.sets.permutations_with_reps import permute_with_reps as pwr
 
 
 class TestPermutationsWithReps(unittest.TestCase):
@@ -12,7 +12,7 @@ class TestPermutationsWithReps(unittest.TestCase):
         elapsed = time.time() - self._started_at
         print(f'Time: ({elapsed:.8f}s)')
 
-    def test_permutations_with_rep(self):
+    def test_permutations_with_reps(self):
         # print(pwr('1234', 6))
         # print(pwr([1,2,3,4], 2))
         # print(pwr(["1","2","3","4"], 2))

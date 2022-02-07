@@ -5,13 +5,13 @@
         string || char list || int list
 """
 
-def permutations(elements):
+def permute_without_reps(elements):
     if len(elements) == 1:
         return elements
 
     permutation_opts = []
 
-    recursive_permutations = permutations(elements[1:])
+    recursive_permutations = permute_without_reps(elements[1:])
 
     first_opt = elements[0]
 
@@ -27,16 +27,16 @@ def permutations(elements):
 
 # Permutations no duplicates sol II - Slowest
 
-def permutations_two(s):
+def permute_without_reps_two(s):
     if len(s) == 1:
         return s
     else:
-        return set(s[i]+p for i in range(len(s)) for p in permutations_two(s[:i] + s[i+1:]))
+        return set(s[i]+p for i in range(len(s)) for p in permute_without_reps_two(s[:i] + s[i+1:]))
 
 
 # Permutations no duplicates sol III
 
 import itertools
 
-def permutations_three(string):
+def permute_without_reps_three(string):
     return {''.join(x) for x in itertools.permutations(string)}

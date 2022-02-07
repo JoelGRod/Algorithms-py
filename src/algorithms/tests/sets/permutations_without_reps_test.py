@@ -1,6 +1,6 @@
 import time
 import unittest
-from algorithms.main.sets.permutations_no_rep import permutations as pnr, permutations_two as pnrtwo, permutations_three as pnrthree
+from algorithms.main.sets.permutations_without_reps import permute_without_reps as pnr, permute_without_reps_two as pnrtwo, permute_without_reps_three as pnrthree
 
 
 class TestPermutationsWithoutReps(unittest.TestCase):
@@ -12,7 +12,7 @@ class TestPermutationsWithoutReps(unittest.TestCase):
         elapsed = time.time() - self._started_at
         print(f'Time: ({elapsed:.8f}s)')
 
-    def test_permutations_no_rep(self):
+    def test_permutations_without_reps(self):
         self.assertEqual(sorted(pnr('a')), ['a'])
         self.assertEqual(sorted(pnr('ab')), ['ab', 'ba'])
         self.assertTrue(sorted(pnr('MISSISSIPPI')))
@@ -23,7 +23,7 @@ class TestPermutationsWithoutReps(unittest.TestCase):
         self.assertEqual(sorted(pnr(['a','a','b','b'])), [
                          'aabb', 'abab', 'abba', 'baab', 'baba', 'bbaa'])
 
-    def test_permutations_no_rep_two(self):
+    def test_permutations_without_reps_two(self):
         self.assertEqual(sorted(pnrtwo('a')), ['a'])
         self.assertEqual(sorted(pnrtwo('ab')), ['ab', 'ba'])
         self.assertTrue(sorted(pnr('MISSISSIPPI')))
@@ -34,7 +34,7 @@ class TestPermutationsWithoutReps(unittest.TestCase):
         self.assertEqual(sorted(pnrtwo(['a','a','b','b'])), [
                          'aabb', 'abab', 'abba', 'baab', 'baba', 'bbaa'])
                          
-    def test_permutations_no_rep_three(self):
+    def test_permutations_without_reps_three(self):
         self.assertEqual(sorted(pnrthree('a')), ['a'])
         self.assertEqual(sorted(pnrthree('ab')), ['ab', 'ba'])
         self.assertTrue(sorted(pnr('MISSISSIPPI')))
