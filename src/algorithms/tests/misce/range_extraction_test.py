@@ -1,5 +1,5 @@
 import unittest
-from algorithms.main.sets.range_extraction import solution
+from algorithms.main.misce.range_extraction import solution
 
 
 class TestRangeExtraction(unittest.TestCase):
