@@ -20,4 +20,14 @@ choose r of them. Repetition allowed, order doesn't matter.
 """
 
 def combine_with_reps(options, comb_len):
-    pass
+    if comb_len == 1: return options
+
+    combos = []
+
+    for idx, option in enumerate(options):
+        recursive_combos = combine_with_reps(options[idx:], comb_len - 1)
+
+        for recursive_combo in recursive_combos:
+            combos.append(str(option) + str(recursive_combo))
+    
+    return combos
