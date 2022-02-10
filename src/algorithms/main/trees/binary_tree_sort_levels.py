@@ -1,4 +1,6 @@
 """
+Breadth First Search - BFS - with trees.
+
 You are given a binary tree:
 
 class Node:
