@@ -33,6 +33,9 @@ Should return following list:
 """
 
 
+from collections import deque   # Example 4
+
+
 def tree_by_levels(node):
     values = []
     nodes_queue = []
@@ -69,3 +72,17 @@ def tree_by_levels_three(a):
     while q := [y for x in q if x for y in w.append(x.value) or [x.left, x.right]]:
         continue
     return w
+
+
+def tree_by_levels_four(node):
+    if not node:
+        return []
+    res, queue = [], deque([node, ])
+    while queue:
+        n = queue.popleft()
+        res.append(n.value)
+        if n.left is not None:
+            queue.append(n.left)
+        if n.right is not None:
+            queue.append(n.right)
+    return res
