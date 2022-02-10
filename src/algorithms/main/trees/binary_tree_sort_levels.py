@@ -49,3 +49,23 @@ def tree_by_levels(node):
             nodes_queue.append(temp_node.right)
 
     return values
+
+
+def tree_by_levels_two(tree):
+    queue = [tree]
+    values = []
+
+    while queue:
+        node = queue.pop(0)
+        if node:
+            queue += [node.left, node.right]
+            values.append(node.value)
+
+    return values
+
+
+def tree_by_levels_three(a):
+    q, w = [a], []
+    while q := [y for x in q if x for y in w.append(x.value) or [x.left, x.right]]:
+        continue
+    return w
