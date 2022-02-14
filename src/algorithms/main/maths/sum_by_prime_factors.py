@@ -23,22 +23,24 @@ the sum of the numbers for which 5 is a factor is 0 so we have [5, 0] in the res
 amongst others.
 """
 
+
 def sum_for_list(lst):
     primes = set()
     for num in lst:
         primes.update([p for p in sieve_of_eratosthenes(abs(num)) if num % p == 0])
-    
+
     result = []
-    
+
     for p in primes:
         sum = 0
         for num in lst:
-            if abs(num) % p == 0: sum += num
+            if abs(num) % p == 0:
+                sum += num
         result.append([p, sum])
 
     return result
-            
-    
+
+
 def sieve_of_eratosthenes(limit):
     is_prime = [True for n in range(limit + 1)]
     is_prime[0] = False
@@ -55,5 +57,17 @@ def sieve_of_eratosthenes(limit):
             while next_number <= limit:
                 is_prime[next_number] = False
                 next_number += number
-    
+
+    return primes
+
+# Faster than Sieve of...
+def prime_factors(n):
+    primes = []
+    c = 2
+    while n > 1:
+        if n % c == 0:
+            primes.append(int(c))
+            n /= c
+        else:
+            c += 1
     return primes

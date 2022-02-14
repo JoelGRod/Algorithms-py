@@ -22,5 +22,5 @@ def sieve_of_eratosthenes(limit):
             while next_number <= limit:
                 is_prime[next_number] = False
                 next_number += number
-    
+
     return primes
