@@ -54,6 +54,7 @@ def list_position(word):
         if sum_elem_before != 0 
         else 0 + sum_pos)
 
+################################################################
 # Extra Solution I
 # from math import factorial
 # def listPosition(word):
@@ -71,6 +72,7 @@ def list_position(word):
 #         word = word[1:]
 #     return count +1
 
+################################################################
 # Extra Solution II
 # from collections import Counter
 
@@ -87,6 +89,7 @@ def list_position(word):
 #         s = s * (i + 1) // c[x]
 #     return r
 
+################################################################
 # Extra Solution III
 # import math
 # from collections import Counter
